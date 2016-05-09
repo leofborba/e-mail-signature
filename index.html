@@ -1,0 +1,48 @@
+﻿<html ng-app>
+	<head>
+		<title>Assinatura de email</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script type="text/javascript">
+			function copyToClipBoard(){
+				holdtext.innerText = assinatura.innerHTML;
+				Copied = holdtext.createTextRange();
+				Copied.execCommand("Copy");
+			
+				alert('Agora vá até seu email e cole a assinatura! Pronto!');
+			}
+		</script>
+	</head>
+	<body>
+	<div>
+		Nome: <input type="text" ng-model="name" placeholder="insira seu nome ..."><br>
+		Cargo: <input type="text" ng-model="cargo" placeholder="assessor de ..."><br>
+		Celular (opcional): <input type="text" ng-model="tel" placeholder="(21) xxxx-xxxx"><br>
+	</div>
+	<br>
+	<br>
+	Selecione o que esta dentro da área em vermelho abaixo, copie e cole em seu email!
+	<!--<input type="button" value="Copiar assinatura" onclick="javascript:copyToClipBoard()"/>-->
+	<br>
+	<br>
+	<div id="assinatura" style="border: 2px solid red"> 
+	<table>
+		<tbody>
+			<tr>
+				<td valign="top">
+					<div style="margin-bottom:20px">
+						<a href="insira o link de encaminhamento"><img style="margin-top:8px;" width="200px" src="insira o caminho do logo" alt="Logo" border="0"></a>
+					</div>
+				</td>
+				<td valign="top">
+					<div style="border-left-width:1px;border-left-style:solid;border-left-color:rgb(238,238,238);margin-left:15px;padding-left:15px">
+					<span style="font-family:'Trebuchet MS',Helvetica,sans-serif;font-size:14px;color:rgb(102,51,204);font-size:14px;">{{name}}&nbsp;</span><br>
+					<span style="font-family:'Trebuchet MS',Helvetica,sans-serif;color:rgb(0,0,51);font-size:12px;">{{cargo}}</span><br>
+					<span style="font-family:'Trebuchet MS',Helvetica,sans-serif;color:rgb(102,102,102);font-size:12px;">Celular: {{tel}}</span><br>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</body>
+</html>
